@@ -43,7 +43,16 @@ void loop()
  //Serial.println((char)bluetooth.read());
  
  dataFromBt = bluetooth.read();
+
  
+ if(dataFromBt == 'h'){
+ bluetooth.println("--------HELP--------");
+ bluetooth.println("0 - LED OFF");
+ bluetooth.println("1 - LED ON");
+ bluetooth.println("b - Blink");
+ bluetooth.println("v - Buzzer ON/OFF");
+ bluetooth.println("t - Termometer");
+ }
  if(dataFromBt == '1'){
    Serial.println("led on");
    digitalWrite(led, HIGH);
