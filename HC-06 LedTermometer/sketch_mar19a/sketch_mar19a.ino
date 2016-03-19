@@ -22,7 +22,6 @@ SoftwareSerial bluetooth(bluetoothTx, bluetoothRx);
 void setup()
 {
  Serial.begin(9600); // Begin the serial monitor at 9600bps
- 
  bluetooth.begin(115200); // The Bluetooth Mate defaults to 115200bps
  bluetooth.print("$"); // Print three times individually
  bluetooth.print("$");
@@ -60,9 +59,7 @@ void loop()
    sensors.requestTemperatures();
    bluetooth.println("Temperature: ");
    bluetooth.println(sensors.getTempCByIndex(0));
-   delay(1000);
  }
- 
  if(dataFromBt == 'v'){
    BuzzerBol = !BuzzerBol;
    if(BuzzerBol){
